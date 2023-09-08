@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/*=======CSS VARIABLE=======*/
+:root {
+  --white-color: #fff;
+  --dark-color: #222;
+  --body-bg-color: #fff;
+  --section-bg-color: #202834;
+  --navigation-item-hover-color: #3b5378;
+
+  --text-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+
+  --scroll-bar-color: #fff;
+  --scroll-thumb-color: #282f4e;
+  --scroll-thumb-hover-color: #454f6b;
+}
+/*======== Scroll Bar ========*/
+::-webkit-scrollbar {
+  width: 11px;
+  background: var(--scroll-bar-color);
+}
+::-webkit-scrollbar-thumb {
+  width: 100%;
+  background: var(--scroll-thumb-color);
+  border-radius: 2em;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover-color);
+}
+
+/*======= Main CSS =======*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/*======= Header =======*/
+header {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: calc(5rem + 1rem);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  transition: 0.5s ease;
+  transition-property: height, background;
+}
+header.sticky {
+  height: calc(2.5rem + 1rem);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+header .nav-bar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 200px;
+  transition: 0.3s ease;
+}
+.nav-close-btn,
+.nav-menu-btn {
+  display: none;
+}
+.nav-bar .logo {
+  color: var(--dark-color);
+  font-size: 1.8em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: var(--text-shadow);
+}
+.nav-items a i {
+  font-size: 2em;
+}
+.nav-items a:not(:last-child) {
+  margin-right: 45px;
+  margin-left: 45px;
+}
+
+/*======= Home =======*/
+.home {
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.form-box {
+  z-index: 999;
+  background: #fff;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
+  width: 350px;
+  padding: 50px 40px;
+  overflow: hidden;
+}
+.form-box h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+.form-box .field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 25px;
+}
+
+.form-box .field input {
+  border: none;
+  outline: none;
+  background: none;
+  width: 100%;
+  font-size: 1em;
+  padding-bottom: 5px;
+}
+
+.form-box .field i {
+  color: #828da0;
+  font-size: 0.85em;
+}
+.form-box .field.active {
+  color: #0065ff;
+  transition: 0.3s ease;
+}
+.eye-btn {
+  cursor: pointer;
+}
+.eye-btn i:hover {
+  color: #0065ff;
+  transition: 0.3s ease;
+}
+
+.forgot-link {
+  text-align: right;
+  transform: translateY(-10px);
+}
+
+.forgot-link a {
+  color: #0065ff;
+  font-size: 0.8em;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.submit-btn {
+  justify-content: center;
+  left: 50%;
+  background: #0065ff;
+  color: #fff;
+  border: none;
+  outline: none;
+  width: 120px;
+  padding: 10px 30px;
+  font-size: 0.8em;
+  font-weight: 500;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.login-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login-options .text {
+  color: #828da0;
+  font-size: 0.65em;
+  margin: 25px 0;
+}
+.other-logins {
+  display: flex;
+}
+.other-logins a {
+  border: 1px solid #ccc;
+  padding: 11px 32px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  transition: border 0.3s ease;
+}
+
+.other-logins a:hover {
+  border: 1px solid #0065ff;
+}
+.other-logins a {
+  color: #000000;
+  font-size: 20px;
+}
+
+/* Existing styles for body and other elements */
+/* For 1500px Width */
+@media screen and (min-width: 1301px) and (max-width: 1500px) {
+  body {
+    background-size: cover; /* Scale the background image to cover the entire viewport */
+    background-position: center center; /* Center the background image */
+  }
+
+  header .nav-bar {
+    padding: 0 200px; /* Further adjust the padding for the navigation bar */
+  }
+  /* Add any additional styles or adjustments for this breakpoint */
+}
+/* Existing styles for body and other elements */
+
+/* For 1300px Width */
+@media screen and (min-width: 1101px) and (max-width: 1300px) {
+  body {
+    background-size: cover; /* Scale the background image to cover the entire viewport */
+    background-position: center center; /* Center the background image */
+  }
+
+  header .nav-bar {
+    padding: 0 150px; /* Adjust the padding for the navigation bar */
+  }
+  /* Add any additional styles or adjustments for this breakpoint */
+}
+
+/* For 1100px Width */
+@media screen and (max-width: 1100px) {
+  body {
+    background-size: cover; /* Scale the background image to cover the entire viewport */
+    background-position: center center; /* Center the background image */
+  }
+
+  header .nav-bar {
+    padding: 0 100px; /* Adjust the padding for the navigation bar */
+  }
+  /* Add any additional styles or adjustments for this breakpoint */
+}
+
+/* For 785px Width */
+@media screen and (max-width: 785px) {
+  body {
+    background-size: cover; /* Scale the background image to cover the entire viewport */
+    background-position: center center; /* Center the background image */
+  }
+
+  header .nav-bar {
+    padding: 0 20px; /* Further reduce the padding for smaller screens */
+  }
+  .form-box {
+    width: 80%; /* Make the sign-in form wider for better visibility */
+  }
+  /* Add any additional styles or adjustments for this breakpoint */
+}
+/* Default styles for larger screens */
+/* Adjust as needed for desktop or larger screens */
+
+/* For screens up to 785px */
+@media screen and (max-width: 785px) {
+  .form-box {
+    width: 80%; /* Make the form box narrower for smaller screens */
+    margin: 0 auto; /* Center the form horizontally */
+  }
+
+  /* Adjust font sizes and paddings for smaller screens */
+  .text-wrapper,
+  .text-wrapper-2,
+  .p,
+  .button {
+    font-size: 0.8rem; /* Adjust font size as needed */
+  }
+
+  /* Add any other necessary adjustments for smaller screens */
+}
+
+/* For iPhone SE (320px width) */
+@media screen and (max-width: 320px) {
+  .form-box {
+    width: 90%; /* Further narrow the form box for iPhone SE */
+  }
+
+  /* Adjust font sizes and paddings for iPhone SE */
+  .text-wrapper,
+  .text-wrapper-2,
+  .p,
+  .button {
+    font-size: 0.7rem; /* Adjust font size for iPhone SE */
+  }
+
+  /* Add any other specific adjustments for iPhone SE */
+}
